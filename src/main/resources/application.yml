@@ -1,7 +1,13 @@
 app:
-  browser: chrome
+  browser: headlessFirefox
   url: http://automationpractice.com/index.php
 hub:
   protocol: http
   host: localhost
   port: 4444
+
+spring:
+  profiles:
+    active: local
+  jpa:
+    defer-datasource-initialization: true

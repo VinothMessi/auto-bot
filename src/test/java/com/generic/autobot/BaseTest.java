@@ -1,5 +1,7 @@
 package com.generic.autobot;
 
+import org.openqa.selenium.WebDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -7,10 +9,10 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 @SpringBootTest
 public class BaseTest extends AbstractTestNGSpringContextTests {
     @Value("${app.browser}")
-    protected String browser;
+    protected String appBrowser;
 
     @Value("${app.url}")
-    protected String url;
+    protected String appUrl;
 
     @Value("${hub.protocol}")
     protected String protocol;
@@ -20,4 +22,7 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
 
     @Value("${hub.port}")
     protected Integer port;
+
+    @Autowired
+    protected WebDriver browser;
 }
