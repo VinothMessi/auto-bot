@@ -1,0 +1,7 @@
+app:
+  browser: chrome
+  url: http://automationpractice.com/index.php
+hub:
+  protocol: http
+  host: localhost
+  port: 4444
