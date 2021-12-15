@@ -1,5 +1,5 @@
 app:
-  browser: headlessFirefox
+  browser: firefox
   url: http://automationpractice.com/index.php
 hub:
   protocol: http
@@ -8,6 +8,6 @@ hub:
 
 spring:
   profiles:
-    active: local
+    active: remote
   jpa:
     defer-datasource-initialization: true
