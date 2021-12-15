@@ -1,13 +1,20 @@
-app:
-  browser: firefox
-  url: http://automationpractice.com/index.php
-hub:
-  protocol: http
-  host: localhost
-  port: 4444
+project:
+  name: auto-bot
+  browser: chrome
+
+  reportPath: /results/reports/
+  reportName: ${project.name}
+  reportFormat: .html
+
+  logPath: /results/logs/
+  logName: ${project.name}
+  logFormat: .log
+
+  snapPath: /results/reports/snaps/
+  dataPath: /resources/testdata/
 
 spring:
   profiles:
-    active: remote
+    active: local
   jpa:
     defer-datasource-initialization: true

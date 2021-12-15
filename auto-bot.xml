@@ -3,7 +3,7 @@
 <suite name="Auto-Bot" verbose="1" >
     <test name="Regression Testing" >
         <classes>
-            <class name="com.generic.autobot.testcases.AutomationPractice" />
+            <class name="com.generic.autobot.testcases.Sanity" />
         </classes>
     </test>
 </suite>

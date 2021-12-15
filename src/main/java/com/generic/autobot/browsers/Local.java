@@ -18,14 +18,14 @@ import org.springframework.context.annotation.Profile;
 @Profile("local")
 public class Local {
     @Bean
-    @ConditionalOnProperty(name = "app.browser", havingValue = "chrome")
+    @ConditionalOnProperty(name = "project.browser", havingValue = "chrome")
     public WebDriver chrome() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
 
     @Bean
-    @ConditionalOnProperty(name = "app.browser", havingValue = "headlessChrome")
+    @ConditionalOnProperty(name = "project.browser", havingValue = "headlessChrome")
     public WebDriver headlessChrome() {
         WebDriverManager.chromedriver().setup();
         var options = new ChromeOptions();
@@ -34,21 +34,21 @@ public class Local {
     }
 
     @Bean
-    @ConditionalOnProperty(name = "app.browser", havingValue = "edge")
+    @ConditionalOnProperty(name = "project.browser", havingValue = "edge")
     public WebDriver edge() {
         WebDriverManager.edgedriver().setup();
         return new EdgeDriver();
     }
 
     @Bean
-    @ConditionalOnProperty(name = "app.browser", havingValue = "firefox")
+    @ConditionalOnProperty(name = "project.browser", havingValue = "firefox")
     public WebDriver firefox() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
     }
 
     @Bean
-    @ConditionalOnProperty(name = "app.browser", havingValue = "headlessFirefox")
+    @ConditionalOnProperty(name = "project.browser", havingValue = "headlessFirefox")
     public WebDriver headlessFirefox() {
         WebDriverManager.firefoxdriver().setup();
         var options = new FirefoxOptions();
