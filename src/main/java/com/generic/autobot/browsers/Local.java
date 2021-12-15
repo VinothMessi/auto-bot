@@ -8,10 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 @Lazy
 @Configuration
@@ -19,6 +16,7 @@ import org.springframework.context.annotation.Profile;
 public class Local {
     @Bean
     @ConditionalOnProperty(name = "project.browser", havingValue = "chrome")
+    @Scope("browserscope")
     public WebDriver chrome() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
@@ -26,6 +24,7 @@ public class Local {
 
     @Bean
     @ConditionalOnProperty(name = "project.browser", havingValue = "headlessChrome")
+    @Scope("browserscope")
     public WebDriver headlessChrome() {
         WebDriverManager.chromedriver().setup();
         var options = new ChromeOptions();
@@ -35,6 +34,7 @@ public class Local {
 
     @Bean
     @ConditionalOnProperty(name = "project.browser", havingValue = "edge")
+    @Scope("browserscope")
     public WebDriver edge() {
         WebDriverManager.edgedriver().setup();
         return new EdgeDriver();
@@ -42,6 +42,7 @@ public class Local {
 
     @Bean
     @ConditionalOnProperty(name = "project.browser", havingValue = "firefox")
+    @Scope("browserscope")
     public WebDriver firefox() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
@@ -49,6 +50,7 @@ public class Local {
 
     @Bean
     @ConditionalOnProperty(name = "project.browser", havingValue = "headlessFirefox")
+    @Scope("browserscope")
     public WebDriver headlessFirefox() {
         WebDriverManager.firefoxdriver().setup();
         var options = new FirefoxOptions();
