@@ -1,23 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Auto-Bot" parallel="tests">
+<suite name="Auto-Bot" parallel="classes">
 
     <test name="Regression Testing One">
-        <classes>
-            <class name="com.generic.autobot.testcases.Sanity"/>
-        </classes>
-    </test>
 
-    <test name="Regression Testing Two">
         <classes>
-            <class name="com.generic.autobot.testcases.Sanity"/>
+            <class name="com.generic.autobot.testcases.OpenMrs"/>
+            <class name="com.generic.autobot.testcases.SauceDemo"/>
+            <class name="com.generic.autobot.testcases.Lennox"/>
         </classes>
-    </test>
 
-    <test name="Regression Testing Three">
-        <classes>
-            <class name="com.generic.autobot.testcases.Sanity"/>
-        </classes>
     </test>
 
 </suite>
