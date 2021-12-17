@@ -13,18 +13,15 @@ project:
   snapPath: /results/reports/snaps/
   dataPath: /resources/testdata/
 
-openmrs:
-  url: https://demo.openmrs.org/openmrs/login.htm
-  userName: Admin
-  password: Admin123
-sauce:
-  url: https://www.saucedemo.com/
-  userName: standard_user
-  password: secret_sauce
-lennox:
-  url: https://www.liidaveqa.com/
-  userName: lenproautomation8@lenqat.com
-  password: Community17
+visa:
+  url: https://vins-udemy.s3.amazonaws.com/sb/visa/udemy-visa.html
+  header: VISA Registration Form
+  subHeader: Fill out the form carefully for registration
+
+flight:
+  url: https://vins-udemy.s3.amazonaws.com/docker/docker-book-flight.html
+  header: Docker Flight Booking Application
+  subHeader: User Registration Form
 
 spring:
   profiles:

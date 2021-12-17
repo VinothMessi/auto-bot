@@ -5,9 +5,8 @@
     <test name="Regression Testing One">
 
         <classes>
-            <class name="com.generic.autobot.testcases.OpenMrs"/>
-            <class name="com.generic.autobot.testcases.SauceDemo"/>
-            <class name="com.generic.autobot.testcases.Lennox"/>
+            <class name="com.generic.autobot.testcases.VisaRegistration"/>
+            <class name="com.generic.autobot.testcases.FlightBooking"/>
         </classes>
 
     </test>
