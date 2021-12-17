@@ -2,13 +2,11 @@
 
 <suite name="Auto-Bot" parallel="classes">
 
-    <test name="Regression Testing One">
-
+    <test name="Visa Registration">
         <classes>
             <class name="com.generic.autobot.testcases.VisaRegistration"/>
             <class name="com.generic.autobot.testcases.FlightBooking"/>
         </classes>
-
     </test>
 
 </suite>

@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.is;
 
 public class FlightBooking extends BaseTest {
     @Value("${flight.url}")
-    private String flight;
+    private String url;
 
     @Value("${flight.header}")
     private String heading;
@@ -25,7 +25,7 @@ public class FlightBooking extends BaseTest {
     @BeforeClass
     public void launch_application() {
         browser.manage().window().maximize();
-        browser.navigate().to(flight);
+        browser.navigate().to(this.url);
 
         By header = By.id("header_14");
         By subHeader = By.xpath("(//h1)[2]");

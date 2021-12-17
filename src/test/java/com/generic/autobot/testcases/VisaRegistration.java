@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.is;
 
 public class VisaRegistration extends BaseTest {
     @Value("${visa.url}")
-    private String visa;
+    private String url;
 
     @Value("${visa.header}")
     private String heading;
@@ -28,7 +28,7 @@ public class VisaRegistration extends BaseTest {
     @BeforeClass
     public void launch_application() {
         browser.manage().window().maximize();
-        browser.navigate().to(visa);
+        browser.navigate().to(this.url);
 
         By header = By.id("header_1");
         By subHeader = By.id("subHeader_1");
