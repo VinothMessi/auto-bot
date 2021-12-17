@@ -111,6 +111,6 @@ public class VisaRegistration extends BaseTest {
 
     @AfterClass
     public void close_application() {
-        browser.close();
+        browser.quit();
     }
 }

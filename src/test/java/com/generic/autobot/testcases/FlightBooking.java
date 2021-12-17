@@ -137,6 +137,6 @@ public class FlightBooking extends BaseTest {
 
     @AfterClass
     public void close_application() {
-        browser.close();
+        browser.quit();
     }
 }

@@ -15,7 +15,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     deploy:
-      replicas: 3
+      replicas: 2
 
   edge:
     image: selenium/node-edge:4.1.0-20211209
@@ -29,7 +29,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     deploy:
-      replicas: 3
+      replicas: 2
 
   firefox:
     image: selenium/node-firefox:4.1.0-20211209
@@ -43,7 +43,7 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     deploy:
-      replicas: 3
+      replicas: 2
 
   selenium-hub:
     image: selenium/hub:4.1.0-20211209
