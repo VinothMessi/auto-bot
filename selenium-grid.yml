@@ -4,7 +4,7 @@
 version: "3"
 services:
   chrome:
-    image: selenium/node-chrome:4.1.0-20211209
+    image: selenium/node-chrome:4.1.1
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -18,7 +18,7 @@ services:
       replicas: 2
 
   edge:
-    image: selenium/node-edge:4.1.0-20211209
+    image: selenium/node-edge:4.1.1
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -32,7 +32,7 @@ services:
       replicas: 2
 
   firefox:
-    image: selenium/node-firefox:4.1.0-20211209
+    image: selenium/node-firefox:4.1.1
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -46,7 +46,7 @@ services:
       replicas: 2
 
   selenium-hub:
-    image: selenium/hub:4.1.0-20211209
+    image: selenium/hub:4.1.1
     container_name: selenium-hub
     networks:
       - selenium-grid

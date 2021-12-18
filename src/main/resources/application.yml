@@ -15,6 +15,6 @@ project:
 
 spring:
   profiles:
-    active: local,flight,visa
+    active: remote,flight,visa
   jpa:
     defer-datasource-initialization: true
