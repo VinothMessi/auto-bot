@@ -30,8 +30,8 @@ public class FlightBooking extends BaseTest {
         By header = By.id("header_14");
         By subHeader = By.xpath("(//h1)[2]");
 
-        assertThat(browser.findElement(header).getText().trim(), is(equalTo(heading)));
-        assertThat(browser.findElement(subHeader).getText().trim(), is(equalTo(subHeading)));
+        assertThat(find.the(header).getText().trim(), is(equalTo(heading)));
+        assertThat(find.the(subHeader).getText().trim(), is(equalTo(subHeading)));
     }
 
     @Test
@@ -41,10 +41,10 @@ public class FlightBooking extends BaseTest {
         By phone = By.name("phone");
         By email = By.name("userName");
 
-        browser.findElement(firstName).sendKeys("Lionel");
-        browser.findElement(lastName).sendKeys("Messi");
-        browser.findElement(phone).sendKeys("1234567890");
-        browser.findElement(email).sendKeys("Lionel.Messi@gmail.com");
+        find.the(firstName).sendKeys("Lionel");
+        find.the(lastName).sendKeys("Messi");
+        find.the(phone).sendKeys("1234567890");
+        find.the(email).sendKeys("Lionel.Messi@gmail.com");
     }
 
     @Test
@@ -55,12 +55,12 @@ public class FlightBooking extends BaseTest {
         By postalCode = By.name("postalCode");
         By country = By.name("country");
 
-        browser.findElement(address).sendKeys("Rosario, Argentina");
-        browser.findElement(city).sendKeys("Bruno Ares");
-        browser.findElement(state).sendKeys("Rosario");
-        browser.findElement(postalCode).sendKeys("Lionel.Messi@gmail.com");
+        find.the(address).sendKeys("Rosario, Argentina");
+        find.the(city).sendKeys("Bruno Ares");
+        find.the(state).sendKeys("Rosario");
+        find.the(postalCode).sendKeys("Lionel.Messi@gmail.com");
 
-        Select fCountry = new Select(browser.findElement(country));
+        Select fCountry = new Select(find.the(country));
         fCountry.selectByValue("ARGENTINA");
     }
 
@@ -71,10 +71,10 @@ public class FlightBooking extends BaseTest {
         By confirmPassword = By.name("confirmPassword");
         By submit = By.name("register");
 
-        browser.findElement(userName).sendKeys("LionelMessi");
-        browser.findElement(password).sendKeys("lionelmessi");
-        browser.findElement(confirmPassword).sendKeys("lionelmessi");
-        browser.findElement(submit).click();
+        find.the(userName).sendKeys("LionelMessi");
+        find.the(password).sendKeys("lionelmessi");
+        find.the(confirmPassword).sendKeys("lionelmessi");
+        find.the(submit).click();
     }
 
     @Test
@@ -94,24 +94,24 @@ public class FlightBooking extends BaseTest {
         By firstClass = By.xpath("//input[@value='First']");
         By airline = By.name("airline");
 
-        browser.findElement(flights).click();
+        find.the(flights).click();
 
         Thread.sleep(3000);
         String type = "oneWay";
         switch (type) {
             case "roundTrip":
-                browser.findElement(roundtrip).click();
+                find.the(roundtrip).click();
             case "oneWay":
-                browser.findElement(oneway).click();
+                find.the(oneway).click();
         }
 
-        Select noOfPassengers = new Select(browser.findElement(passengers));
-        Select departingCountry = new Select(browser.findElement(departingFrom));
-        Select departingMonth = new Select(browser.findElement(fromMonth));
-        Select departingDay = new Select(browser.findElement(fromDay));
-        Select arrivingCountry = new Select(browser.findElement(arrivingIn));
-        Select arrivingMonth = new Select(browser.findElement(toMonth));
-        Select arrivingDay = new Select(browser.findElement(toDay));
+        Select noOfPassengers = new Select(find.the(passengers));
+        Select departingCountry = new Select(find.the(departingFrom));
+        Select departingMonth = new Select(find.the(fromMonth));
+        Select departingDay = new Select(find.the(fromDay));
+        Select arrivingCountry = new Select(find.the(arrivingIn));
+        Select arrivingMonth = new Select(find.the(toMonth));
+        Select arrivingDay = new Select(find.the(toDay));
 
         noOfPassengers.selectByValue("2");
         departingCountry.selectByValue("London");
@@ -124,14 +124,14 @@ public class FlightBooking extends BaseTest {
         String serviceClass = "businessClass";
         switch (serviceClass) {
             case "economyClass":
-                browser.findElement(economyClass).click();
+                find.the(economyClass).click();
             case "businessClass":
-                browser.findElement(businessClass).click();
+                find.the(businessClass).click();
             case "firstClass":
-                browser.findElement(firstClass).click();
+                find.the(firstClass).click();
         }
 
-        Select airlineName = new Select(browser.findElement(airline));
+        Select airlineName = new Select(find.the(airline));
         airlineName.selectByVisibleText("Unified Airlines");
     }
 

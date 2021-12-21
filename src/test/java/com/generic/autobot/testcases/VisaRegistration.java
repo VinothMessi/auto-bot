@@ -33,8 +33,8 @@ public class VisaRegistration extends BaseTest {
         By header = By.id("header_1");
         By subHeader = By.id("subHeader_1");
 
-        String pageHeader = browser.findElement(header).getText().trim();
-        String pageSubHeader = browser.findElement(subHeader).getText().trim();
+        String pageHeader = find.the(header).getText().trim();
+        String pageSubHeader = find.the(subHeader).getText().trim();
 
         assertThat(pageHeader, is(equalTo(heading)));
         assertThat(pageSubHeader, is(equalTo(subHeading)));
@@ -46,9 +46,9 @@ public class VisaRegistration extends BaseTest {
         By middleName = By.id("middle_4");
         By lastName = By.id("last_4");
 
-        browser.findElement(firstName).sendKeys("Lionel");
-        browser.findElement(middleName).sendKeys("Andrés");
-        browser.findElement(lastName).sendKeys("Messi");
+        find.the(firstName).sendKeys("Lionel");
+        find.the(middleName).sendKeys("Andrés");
+        find.the(lastName).sendKeys("Messi");
     }
 
     @Test
@@ -56,8 +56,8 @@ public class VisaRegistration extends BaseTest {
         By fromCountry = By.id("input_46");
         By toCountry = By.id("input_47");
 
-        Select fCountry = new Select(browser.findElement(fromCountry));
-        Select tCountry = new Select(browser.findElement(toCountry));
+        Select fCountry = new Select(find.the(fromCountry));
+        Select tCountry = new Select(find.the(toCountry));
 
         fCountry.selectByValue("Argentina");
         tCountry.selectByValue("Spain");
@@ -69,9 +69,9 @@ public class VisaRegistration extends BaseTest {
         By day = By.id("input_24_day");
         By year = By.id("input_24_year");
 
-        Select bMonth = new Select(browser.findElement(month));
-        Select bDay = new Select(browser.findElement(day));
-        Select bYear = new Select(browser.findElement(year));
+        Select bMonth = new Select(find.the(month));
+        Select bDay = new Select(find.the(day));
+        Select bYear = new Select(find.the(year));
 
         bMonth.selectByValue("JUNE");
         bDay.selectByValue("24");
@@ -84,9 +84,9 @@ public class VisaRegistration extends BaseTest {
         By areaCode = By.id("input_27_area");
         By phoneNumber = By.id("input_27_phone");
 
-        browser.findElement(userEmail).sendKeys("Lionel.Messi@gmail.com");
-        browser.findElement(areaCode).sendKeys("+54");
-        browser.findElement(phoneNumber).sendKeys("1234567890");
+        find.the(userEmail).sendKeys("Lionel.Messi@gmail.com");
+        find.the(areaCode).sendKeys("+54");
+        find.the(phoneNumber).sendKeys("1234567890");
     }
 
     @Test
@@ -94,8 +94,8 @@ public class VisaRegistration extends BaseTest {
         By comments = By.id("input_45");
         By submit = By.id("submitBtn");
 
-        browser.findElement(comments).sendKeys("Lionel Messi Visa Form");
-        browser.findElement(submit).click();
+        find.the(comments).sendKeys("Lionel Messi Visa Form");
+        find.the(submit).click();
     }
 
     @Test
@@ -105,8 +105,8 @@ public class VisaRegistration extends BaseTest {
 
         await().atMost(Duration.ofSeconds(10))
                 .pollInterval(Duration.ofSeconds(1))
-                .until(() -> browser.findElement(requestId).isDisplayed() == true);
-        System.out.println("Confirmation Message:" + "\n" + browser.findElement(panel).getText());
+                .until(() -> find.the(requestId).isDisplayed() == true);
+        System.out.println("Confirmation Message:" + "\n" + find.the(panel).getText());
     }
 
     @AfterClass

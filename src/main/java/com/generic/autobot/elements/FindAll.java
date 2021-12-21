@@ -1,5 +1,6 @@
 package com.generic.autobot.elements;
 
+import com.generic.autobot.enums.Attribute;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,144 +10,168 @@ import java.util.List;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class FindAll {
-    private static WebDriver lDriver;
+    private WebDriver lDriver;
 
     public FindAll(WebDriver driver) {
         this.lDriver = driver;
     }
 
-    public static List<WebElement> by(String attribute, String value) {
+    public List<WebElement> the(By by) {
+        return lDriver.findElements(by);
+    }
+
+    public List<WebElement> above(By element, By by) {
+        return lDriver.findElements(with(by).above(element));
+    }
+
+    public List<WebElement> below(By element, By by) {
+        return lDriver.findElements(with(by).below(element));
+    }
+
+    public List<WebElement> near(By element, By by) {
+        return lDriver.findElements(with(by).near(element));
+    }
+
+    public List<WebElement> toRightOf(By element, By by) {
+        return lDriver.findElements(with(by).toRightOf(element));
+    }
+
+    public List<WebElement> toLeftOf(By element, By by) {
+        return lDriver.findElements(with(by).toLeftOf(element));
+    }
+
+    public List<WebElement> by(Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(By.id(value));
-            case "name":
+            case NAME:
                 return lDriver.findElements(By.name(value));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(By.className(value));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(By.linkText(value));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(By.partialLinkText(value));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(By.tagName(value));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(By.xpath(value));
-            case "css":
+            case CSS:
                 return lDriver.findElements(By.cssSelector(value));
             default:
                 return null;
         }
     }
 
-    public static List<WebElement> above(By element, String attribute, String value) {
+    public List<WebElement> above(By element, Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(with(By.id(value)).above(element));
-            case "name":
+            case NAME:
                 return lDriver.findElements(with(By.name(value)).above(element));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(with(By.className(value)).above(element));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(with(By.linkText(value)).above(element));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(with(By.partialLinkText(value)).above(element));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(with(By.tagName(value)).above(element));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(with(By.xpath(value)).above(element));
-            case "css":
+            case CSS:
                 return lDriver.findElements(with(By.cssSelector(value)).above(element));
             default:
                 return null;
         }
     }
 
-    public static List<WebElement> below(By element, String attribute, String value) {
+    public List<WebElement> below(By element, Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(with(By.id(value)).below(element));
-            case "name":
+            case NAME:
                 return lDriver.findElements(with(By.name(value)).below(element));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(with(By.className(value)).below(element));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(with(By.linkText(value)).below(element));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(with(By.partialLinkText(value)).below(element));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(with(By.tagName(value)).below(element));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(with(By.xpath(value)).below(element));
-            case "css":
+            case CSS:
                 return lDriver.findElements(with(By.cssSelector(value)).below(element));
             default:
                 return null;
         }
     }
 
-    public static List<WebElement> near(By element, String attribute, String value) {
+    public List<WebElement> near(By element, Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(with(By.id(value)).near(element));
-            case "name":
+            case NAME:
                 return lDriver.findElements(with(By.name(value)).near(element));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(with(By.className(value)).near(element));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(with(By.linkText(value)).near(element));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(with(By.partialLinkText(value)).near(element));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(with(By.tagName(value)).near(element));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(with(By.xpath(value)).near(element));
-            case "css":
+            case CSS:
                 return lDriver.findElements(with(By.cssSelector(value)).near(element));
             default:
                 return null;
         }
     }
 
-    public static List<WebElement> toRightOf(By element, String attribute, String value) {
+    public List<WebElement> toRightOf(By element, Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(with(By.id(value)).toRightOf(element));
-            case "name":
+            case NAME:
                 return lDriver.findElements(with(By.name(value)).toRightOf(element));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(with(By.className(value)).toRightOf(element));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(with(By.linkText(value)).toRightOf(element));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(with(By.partialLinkText(value)).toRightOf(element));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(with(By.tagName(value)).toRightOf(element));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(with(By.xpath(value)).toRightOf(element));
-            case "css":
+            case CSS:
                 return lDriver.findElements(with(By.cssSelector(value)).toRightOf(element));
             default:
                 return null;
         }
     }
 
-    public static List<WebElement> toLeftOf(By element, String attribute, String value) {
+    public List<WebElement> toLeftOf(By element, Attribute attribute, String value) {
         switch (attribute) {
-            case "id":
+            case ID:
                 return lDriver.findElements(with(By.id(value)).toLeftOf(element));
-            case "name":
+            case NAME:
                 return lDriver.findElements(with(By.name(value)).toLeftOf(element));
-            case "className":
+            case CLASS_NAME:
                 return lDriver.findElements(with(By.className(value)).toLeftOf(element));
-            case "linkText":
+            case LINK_TEXT:
                 return lDriver.findElements(with(By.linkText(value)).toLeftOf(element));
-            case "partialLinkText":
+            case PARTIAL_LINK_TEXT:
                 return lDriver.findElements(with(By.partialLinkText(value)).toLeftOf(element));
-            case "tagName":
+            case TAG_NAME:
                 return lDriver.findElements(with(By.tagName(value)).toLeftOf(element));
-            case "xpath":
+            case XPATH:
                 return lDriver.findElements(with(By.xpath(value)).toLeftOf(element));
-            case "css":
+            case CSS:
                 return lDriver.findElements(with(By.cssSelector(value)).toLeftOf(element));
             default:
                 return null;
