@@ -2,7 +2,7 @@
 
 <suite name="Auto-Bot" parallel="classes">
 
-    <test name="Visa Registration">
+    <test name="Automation Bot Testing">
         <classes>
             <class name="com.generic.autobot.testcases.VisaRegistration"/>
             <class name="com.generic.autobot.testcases.FlightBooking"/>

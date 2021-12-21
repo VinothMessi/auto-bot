@@ -1,5 +1,6 @@
 package com.generic.autobot.helpers;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class Element {
@@ -7,9 +8,7 @@ public class Element {
         element.clear();
     }
 
-    public void click(WebElement element) {
-        element.click();
-    }
+    public void click(WebElement element) {element.click();}
 
     public void submit(WebElement element) {
         element.submit();
