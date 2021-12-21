@@ -1,6 +1,6 @@
 package com.generic.autobot;
 
-import com.generic.autobot.elements.Find;
+import com.generic.autobot.helpers.Find;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

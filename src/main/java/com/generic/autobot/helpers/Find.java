@@ -1,4 +1,4 @@
-package com.generic.autobot.elements;
+package com.generic.autobot.helpers;
 
 import com.generic.autobot.enums.Attribute;
 import org.openqa.selenium.By;
